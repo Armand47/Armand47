@@ -1,0 +1,73 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+double linur(double a, double b)
+{
+    return -b / a;
+}
+
+template < int I > double X(double a, double b, double c)
+{
+    if (I == 1) return (-b + sqrt(b * b - 4 * a * c)) / 2 / a;
+    else if (I == 2) return (-b - sqrt(b * b - 4 * a * c)) / 2 / a;
+    else throw "РЕШЕНИЯ НЕТ!";
+}
+
+void main()
+
+{
+    system("color 0a");
+    setlocale(LC_CTYPE, "rus");
+    int key, v;
+    double a, b, c;
+
+    
+    cout << "в функции передаются коэффициенты уравнений. " << endl << endl;
+    cout << " 2. ВЫХОД." << endl << endl;
+
+    cout << " Введите номер задания : ";
+    cin >> key;
+    cout << endl;
+
+    switch (key)
+    {
+
+    case 1:
+        cout << " Если уравнение линейное то введите 1, если квадратное то введите 2: ";
+        cin >> v;
+        if (v == 1)
+        {
+            cout << " Введите первый коэффициент :";
+            cin >> a;
+            cout << " Введите второй коэффициент :";
+            cin >> b;
+            cout << endl;
+            cout << " Корень линейного уравнения будет равен :" << linur(a, b);
+            cout << endl;
+        }
+        else
+        {
+            cout << " Введите первый коэффициент :";
+            cin >> a;
+            cout << endl;
+            cout << "Введите второй коэффициент :";
+            cin >> b;
+            cout << endl;
+            cout << " Введите третий коэффициент :";
+            cin >> c;
+            cout << endl;
+            double x1 = X< 1 >(a, b, c);
+            double x2 = X< 2 >(a, b, c);
+            cout << " Первый корень линейного уравнения будет равен :" << x1 << endl;
+            cout << " Второй корень линейного уравнения будет равен :" << x2 << endl;
+            cout << endl;
+        }
+
+        break;
+    case 2:
+        break;
+    }
+
+}

@@ -1,0 +1,45 @@
+#include<iostream>
+
+using namespace std;
+
+template<class T>
+void sort_arr(T* arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if (arr[i] < arr[j])
+            {
+                swap(arr[i], arr[j]);
+            }
+        }
+    }
+}
+
+int main(int argc, char* argv[])
+{
+
+    system("chcp 1251 > nul");
+
+    int size = 6;
+
+    int* arr = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = i;
+    }
+
+    sort_arr<int>(arr, size);
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    system("pause > nul");
+
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    int A, B, C, D, E, F, G;
+cout << " Введите число" << endl;
+cin >> A;
+cout << "Введите число" << endl;
+cin >> B;
+cout << "Введите число" << endl;
+cin >> C;
+cout << "Введите число" << endl;
+cin >> D;
+cout << "Введите число" << endl;
+cin >> E;
+cout << "Введите число" << endl;
+cin >> F;
+cout << "Введите число" << endl;
+cin >> G;
+
+if (A < B)
+{
+    A = B;
+}
+if (A < C)
+{
+    A = C;
+}
+if (A < D)
+{
+    A = D;
+}
+if (A < E)
+{
+    A = E;
+}
+if (A < F)
+{
+    A = F;
+}
+if (A < G)
+{
+    A = G;
+}
+cout << "Максимальным числом является " << A && B && C && D && E && F && G;
+
+
+ return 0;
+}

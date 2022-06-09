@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    int a, b, i, j;
+    cout << "Введите первое число диапозона a\n";
+    cin >> a;
+    cout << "Введите второе число диапозона\n";
+    cin >> b;
+    for (i = a; i <= b; i++)
+    {
+        cout << i;
+        for (j = 1; j <= i; j++)
+            if (i % j == 0)
+                cout << j;
+        cout << endl;
+        return 0;
+    }
+}

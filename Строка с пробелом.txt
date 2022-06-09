@@ -1,0 +1,75 @@
+#include<iostream>
+#include<stdlib.h>
+#include <stdio.h>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+class stroka {
+	string doz;
+public:
+	stroka(char doz[]) {
+		this->doz = doz;
+	}
+	string izmen() {
+		int a = 0;
+		for (int b = 0; b < doz.size(); b++) {
+			if (doz[b] != ' ') {
+				a += 1;
+			}
+		}
+		if (a == 0) {
+
+			return doz;
+		}
+		else {
+			for (int b = 0; b < doz.size(); b++) {
+				if (doz[b] != ' ') {
+					for (int c = b; c < doz.size(); c++) {
+						if (doz[c] == ' ') {
+							while (doz[c + 1] == ' ') {
+								for (int d = c + 1; d < doz.size(); d++) {
+
+									doz[d] = doz[d + 1];
+
+								}
+							}
+						}
+					}
+					int hh;
+					for (int y = doz.size(); doz[y] == '\0'; y--) {
+						hh = y;
+					}
+					hh -= 1;
+					if (doz[hh] == ' ') {
+						doz[hh] = NULL;
+					}
+					return doz;
+				}
+			}
+		}
+	}
+	void getdoz() {
+		cout << doz;
+	}
+
+};
+int main()
+{
+	setlocale(LC_ALL, "RUSSIAN");
+	srand(time(NULL));
+
+	char doz[40] = "   dfg  sre  ";
+	cout << "Введите строку с знаками _ как пробелы!(Пожалуйста не используйте кирилицу)\n";
+
+	system("cls");
+
+	stroka vasha(doz);
+	cout << "(";
+	vasha.getdoz();
+	cout << ")\n";
+	vasha.izmen();
+	cout << "(";
+	vasha.getdoz();
+	cout << ")\n";
+	return 0;
+}

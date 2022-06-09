@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int Diapozon(int digit1, int digit2)
+{
+    int sum = 0;
+    for (int i = digit1; i <= digit2; i++)
+        sum = sum + i;
+    return sum;
+}
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    int res = Diapozon(1, 10);
+    cout << res << " ";
+    return 0;
+    
+}
